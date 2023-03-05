@@ -1,22 +1,20 @@
+function dividir(primerNumero, segundoNumero) {
+    resultado = primerNumero / segundoNumero
+}
+function totalConDescuento(primerNumero){
+    resultado= primerNumero - primerNumero * 10 / 100
+}
+
 let montoTotal = parseInt(prompt("Ingresar monto total de la compra"));
 let formaDePago = prompt(
     `El monto total es de $${montoTotal}. Ingresar forma de pago: E para efectivo, D para débito, C para crédito o X para finalizar`
 );
 
-function dividir(primerNumero, segundoNumero) {
-    resultado = primerNumero / segundoNumero
-}
-function TotalConDescuento(primerNumero){
-    resultado= primerNumero - primerNumero * 10 / 100
-}
-
-
-
 while (formaDePago != "X" && formaDePago != "x") {
     switch (formaDePago) {
         case "E" && "e":
             if (montoTotal > 10000){
-                TotalConDescuento (montoTotal);
+                totalConDescuento (montoTotal);
                 alert (`Por comprar susperior a $10000 obtiene 10% de descuento, el monto a pagar es de: ${resultado}`);
             }else{
                 alert(`El monto total a pagar es de $${montoTotal} en efectivo`);
@@ -26,7 +24,6 @@ while (formaDePago != "X" && formaDePago != "x") {
             alert(`El monto total a pagar es de $${montoTotal} con tarjeta de débito`);
             break;
         case "C" && "c":
-            alert(`El monto total será abonado con tarjeta de crédito`);
             if (montoTotal < 6000) {
                 alert(`Por compras menores a $6000, el pago de $${montoTotal} solo podrá hacerse en 1 cuota`)
             }
@@ -56,5 +53,5 @@ while (formaDePago != "X" && formaDePago != "x") {
             break;
     }
     montoTotal = parseInt(prompt("Ingresar monto total de la compra"));
-    formaDePago = prompt(`El monto total es de $${montoTotal}. Ingresar forma de pago: F para Efectivo, D para débito, C para crédito o X para finalizar`);
+    formaDePago = prompt(`El monto total es de $${montoTotal}. Ingresar forma de pago: E para Efectivo, D para débito, C para crédito o X para finalizar`);
 }
