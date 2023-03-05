@@ -5,10 +5,10 @@ let formaDePago = prompt(
 
 while (formaDePago != "X" && formaDePago != "x") {
     switch (formaDePago) {
-        case "E" && "E":
+        case "E" && "e":
             alert(`El monto total será abonado en efectivo`);
             if (montoTotal > 10000){
-                TotalConDescuento = montoTotal - montoTotal* 10 / 100;
+                let TotalConDescuento = montoTotal - montoTotal* 10 / 100;
             alert (`Por comprar susperior a $10000 obtiene 10% de descuento, el monto a pagar es de: ${TotalConDescuento}`);
             }else{
                 alert(`El monto total apagar es de $${montoTotal}`);
