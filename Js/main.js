@@ -5,10 +5,10 @@ function totalConDescuento(x){
     resultado= x - x * 10 / 100
 }
 function alertCobrar(x,y){
-    alert (`El monto total a pagar es de $${x} ${y}`)
+    alert (`El monto total a cobrar es de $${x} ${y}`)
 }
 function alertAvisoCuotas(x,y){
-    alert (`Por compras superiores a $${x}, el pago puede realizar en ${y} cuotas sin intereses`)
+    alert (`Por compras superiores a $${x}, el pago puede realizar en ${y} cuotas sin interés`)
 }
 function alertCobroEnCuotas (x,y,z){
     alert(`El monto total de $${x} puede pagado en ${y} cuota(s) de $${z}`)
@@ -19,13 +19,12 @@ let montoTotal = parseInt(prompt("Ingresar monto total de la compra"));
 let formaDePago = prompt(
     `El monto total es de $${montoTotal}. Ingresar forma de pago: E para efectivo, D para débito, C para crédito o X para finalizar`
 )
-
 while (formaDePago != "X" && formaDePago != "x") {
     switch (formaDePago) {
         case "E" && "e":
             if (montoTotal > 10000){
                 totalConDescuento (montoTotal);
-                alert (`Por compras susperior a $10000 obtiene 10% de descuento`);
+                alert (`Por compras susperior a $10000, el cliente obtiene 10% de descuento`);
                 alertCobrar(resultado, "en efectivo");
             }else{
                 alertCobrar(montoTotal, "en efectivo");
@@ -36,7 +35,7 @@ while (formaDePago != "X" && formaDePago != "x") {
             break;
         case "C" && "c":
             if (montoTotal < 6000) {
-                alert(`Por compras menores a $6000, el pago solo podrá hacerse en 1 cuota`);
+                alert(`Por compras menores a $6000, el pago solo podrá hacerse en 1 cuota sin interés`);
                 alertCobrar(montoTotal, "con tarjeta de crédito");
             }
             if (montoTotal >= 6000 && montoTotal < 20000){
