@@ -1,12 +1,11 @@
 let montoTotal = parseInt(prompt("Ingresar monto total de la compra"));
-alert(`El monto total es de $${montoTotal}`);
-
 let formaDePago = prompt(
-    "Ingresar forma de pago: F para Efectivo, D para débito, C para crédito o X para finalizar"
+    `El monto total es de $${montoTotal}. Ingresar forma de pago: E para efectivo, D para débito, C para crédito o X para finalizar`
 );
+
 while (formaDePago != "X" && formaDePago != "x") {
     switch (formaDePago) {
-        case "F" && "f":
+        case "E" && "E":
             alert(`El monto total será abonado en efectivo`);
             if (montoTotal > 10000){
                 TotalConDescuento = montoTotal - montoTotal* 10 / 100;
@@ -44,10 +43,9 @@ while (formaDePago != "X" && formaDePago != "x") {
             }
             break;            
         default:
-            alert(`Código inválido, ingrese F para Efectivo, D para débito, C para crédito o X para finalizar`);
+            alert(`Código inválido, ingrese E para efectivo, D para débito, C para crédito o X para finalizar`);
             break;
     }
     montoTotal = parseInt(prompt("Ingresar monto total de la compra"));
-        alert(`El monto total es de $${montoTotal}`);
-    formaDePago = prompt("Ingresar forma de pago: F para Efectivo, D para débito, C para crédito o X para finalizar");
+    formaDePago = prompt(`El monto total es de $${montoTotal}. Ingresar forma de pago: F para Efectivo, D para débito, C para crédito o X para finalizar`);
 }
